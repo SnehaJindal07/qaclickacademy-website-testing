@@ -10,16 +10,16 @@
           <include name="teardown"/>
         </methods>
       </class> <!-- Academic.E2EProject.HomePage -->
-      <class name="Academic.E2EProject.validateNavigationBar">
+      <class name="Academic.E2EProject.ValidateNavigationBar">
         <methods>
           <include name="initialize"/>
         </methods>
-      </class> <!-- Academic.E2EProject.validateNavigationBar -->
-      <class name="Academic.E2EProject.validateTitle">
+      </class> <!-- Academic.E2EProject.ValidateNavigationBar -->
+      <class name="Academic.E2EProject.ValidateTitle">
         <methods>
           <include name="initialize"/>
         </methods>
-      </class> <!-- Academic.E2EProject.validateTitle -->
+      </class> <!-- Academic.E2EProject.ValidateTitle -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

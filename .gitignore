@@ -12,3 +12,7 @@ buildNumber.properties
 .project
 .classpath
 .settings
+logs/
+reports/
+.idea
+E2EProject.iml

@@ -6,6 +6,8 @@ This is basic website testing done using selenium and TestNG.  I have done this 
 - Bulk Testing
 - Data provider concept for testing in various scenarios
 - Validations
+- Screenshots on test failure
+- Logging
 
 ## Commands
 

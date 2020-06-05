@@ -5,9 +5,7 @@
     <classes>
       <class name="Academic.E2EProject.HomePage">
         <methods>
-          <include name="basePageNavigation" invocation-numbers="0 1"/>
-          <include name="initialize"/>
-          <include name="teardown"/>
+          <include name="basePageNavigation" invocation-numbers="1"/>
         </methods>
       </class> <!-- Academic.E2EProject.HomePage -->
     </classes>

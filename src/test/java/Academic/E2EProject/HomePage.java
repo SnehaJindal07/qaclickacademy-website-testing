@@ -1,22 +1,21 @@
 package Academic.E2EProject;
 
-import org.testng.annotations.Test;
-import java.io.IOException;
-
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.WebDriver;
 import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
 import pageObject.LandingPage;
 import pageObject.LoginPage;
 import resources.base;
 
-public class HomePage extends base{
+import java.io.IOException;
 
-//	@BeforeTest
-//	public void initialize() throws IOException
-//	{
-//		driver = initializeDriver();
-//	}
+public class HomePage extends base{
+	
+	public WebDriver driver;
+
+	public static Logger log = LogManager.getLogger(HomePage.class);
 	
 	@Test(dataProvider = "getData")
 	public void basePageNavigation(String username, String password, String text) throws IOException, InterruptedException 
@@ -25,24 +24,16 @@ public class HomePage extends base{
 		driver = initializeDriver();
 		driver.get(prop.getProperty("url"));
 		
-
-		 System.out.println(username + " "+ password + " " + text);
 		 LandingPage l = new LandingPage(driver);
 		 l.getLogin().click();
 		 
 		 LoginPage lp = new LoginPage(driver);
 		 lp.getEmail().sendKeys(username);
 		 lp.getPass().sendKeys(password);
-		 System.out.println(text);
-		 lp.getLogin().click();	 
-	}
-	
-	
-	@AfterTest
-	public void teardown()
-	{
-		
-		driver.close();
+		 log.info(text);
+		 lp.getLogin().click();	  
+		 
+		 driver.close();
 	}
 	
 	
@@ -61,4 +52,5 @@ public class HomePage extends base{
 		
 		return data;
 	}
+	
 }
