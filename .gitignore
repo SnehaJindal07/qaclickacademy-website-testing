@@ -16,3 +16,4 @@ logs/
 reports/
 .idea
 E2EProject.iml
+.DS_Store
