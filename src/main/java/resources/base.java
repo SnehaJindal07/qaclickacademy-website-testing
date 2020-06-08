@@ -1,6 +1,9 @@
 package resources;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.commons.io.FileUtils;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -17,24 +20,30 @@ public class base {
 
 	public WebDriver driver;
 	public Properties prop;
+
+	public static Logger log = LogManager.getLogger(base.class);
 	
 	public WebDriver initializeDriver() throws IOException
 	{
-		
 		prop = new Properties();
-		FileInputStream fis = new FileInputStream("//Users//akshatjindal//Desktop//SNEHA//JavaWorkSpace//SeleniumTutorial//E2EProject//src//main//java//resources//data.properties");
+
+		String projectFolder = System.getProperty("user.dir");
+		FileInputStream fis = new FileInputStream(projectFolder + "//src//main//java//resources//data.properties");
 		prop.load(fis);
+
 		String browserName=prop.getProperty("browser");
-		
+		log.info("Running test in " + browserName);
+
 		if(browserName.equals("chrome"))
 		{
-			System.setProperty("webdriver.chrome.driver", "//Users//akshatjindal//Desktop//SNEHA//chromedriver");	
+			WebDriverManager.chromedriver().setup();
+//			System.setProperty("webdriver.chrome.driver", projectFolder + "//src//main//java//resources//chromedriver");
 			driver=new ChromeDriver();
 		}
-		
-		else if(browserName=="firefox")
+		else if(browserName.equals("firefox"))
 		{
-			System.setProperty("webdriver.gecko.driver", "//Users//akshatjindal//Desktop//SNEHA//geckodriver");
+			WebDriverManager.firefoxdriver().setup();
+//			System.setProperty("webdriver.gecko.driver", projectFolder + "//src//main//java//resources//geckodriver");
 			driver=new FirefoxDriver();
 		}
 		
@@ -46,8 +55,8 @@ public class base {
 	{
 		TakesScreenshot ts=(TakesScreenshot) driver;
 		File source =ts.getScreenshotAs(OutputType.FILE);
-		String destinationFile = System.getProperty("user.dir")+"//reports//"+testCaseName+".png";
+		String destinationFile = System.getProperty("user.dir")+"//reports//images//"+testCaseName+".png";
 		FileUtils.copyFile(source,new File(destinationFile));
-		return destinationFile;
+		return "images//"+ testCaseName + ".png";
 	}
 }

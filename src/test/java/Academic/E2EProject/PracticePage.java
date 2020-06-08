@@ -30,7 +30,7 @@ public class PracticePage extends base{
 		}
 		
 		@Test
-		public void basePageNavigation() throws IOException, InterruptedException
+		public void practicePage() throws IOException, InterruptedException
 		{
 		
 			

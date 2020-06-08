@@ -4,36 +4,38 @@
 
 <suite name="Suite" parallel = "tests">
 
-<listeners>
-<listener class-name="Academic.E2EProject.Listeners">
-</listener>
-</listeners>
+    <listeners>
+        <listener class-name="Academic.E2EProject.Listeners"/>
+    </listeners>
 
+    <test name="Validating Title">
+        <classes>
+            <class name="Academic.E2EProject.ValidateTitle"/>
+        </classes>
+    </test>
 
-  <test name="Validating Title">
-    <classes>
-      <class name="Academic.E2EProject.ValidateTitle"/>
-    </classes>
-  </test>
+    <test name="Validating Navigation Bar">
+        <classes>
+            <class name="Academic.E2EProject.ValidateNavigationBar"/>
+        </classes>
+    </test>
+
+    <test name="Validating Registration">
+        <classes>
+            <class name="Academic.E2EProject.SignUpPage"/>
+        </classes>
+    </test>
+
+    <test name="Validating User Login">
+        <classes>
+            <class name="Academic.E2EProject.HomePage"/>
+        </classes>
+    </test>
       
-      
-  <test name="Validating Navigation Bar">
-    <classes>
-      <class name="Academic.E2EProject.ValidateNavigationBar"/>
-   </classes>
- </test>
-      
-      
-  <test name="Validating User Login">
-    <classes>
-      <class name="Academic.E2EProject.HomePage"/>
-    </classes>
-  </test>
-      
-      
-  <test name="Validating Practice Page">
-    <classes>
-      <class name="Academic.E2EProject.PracticePage"/>
-    </classes>
-  </test> <!-- Test -->
+    <test name="Validating Practice Page">
+        <classes>
+            <class name="Academic.E2EProject.PracticePage"/>
+        </classes>
+    </test>
+
 </suite> <!-- Suite -->

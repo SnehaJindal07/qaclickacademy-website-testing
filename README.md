@@ -8,6 +8,8 @@ This is basic website testing done using selenium and TestNG.  I have done this 
 - Validations
 - Screenshots on test failure
 - Logging
+- Extent Report Generation
+- Parallel and Sequential Testing
 
 ## Commands
 

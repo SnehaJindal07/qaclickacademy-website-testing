@@ -13,8 +13,14 @@ public class LoginPage {
 	By email=By.cssSelector("[id*='user_email']");
 	By password=By.cssSelector("[id*='user_password']");
 	By Login=By.cssSelector("[value*='Log In']");
+	By forgotPassword=By.cssSelector("[href*='password/new']");
 
-	
+	public ForgotPassword forgotPassword()
+	{
+		driver.findElement(forgotPassword).click();
+		ForgotPassword fp = new ForgotPassword(driver);
+		return fp;
+	}
 	public LoginPage(WebDriver driver) {
 	
 		this.driver=driver;
