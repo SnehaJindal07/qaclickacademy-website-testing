@@ -54,8 +54,8 @@
       </class> <!-- Academic.E2EProject.PracticePage -->
     </test> <!-- Validating Practice Page -->
     <test name="Validating User Login" duration-ms="49333" started-at="2020-06-05T16:35:38Z" finished-at="2020-06-05T16:36:27Z">
-      <class name="Academic.E2EProject.HomePage">
-        <test-method status="PASS" signature="basePageNavigation(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:Academic.E2EProject.HomePage@489115ef]" name="basePageNavigation" duration-ms="31451" started-at="2020-06-05T22:05:38Z" data-provider="getData" finished-at="2020-06-05T22:06:09Z">
+      <class name="Academic.E2EProject.LoginPage">
+        <test-method status="PASS" signature="basePageNavigation(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:Academic.E2EProject.LoginPage@489115ef]" name="basePageNavigation" duration-ms="31451" started-at="2020-06-05T22:05:38Z" data-provider="getData" finished-at="2020-06-05T22:06:09Z">
           <params>
             <param index="0">
               <value>
@@ -76,7 +76,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- basePageNavigation -->
-        <test-method status="PASS" signature="basePageNavigation(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:Academic.E2EProject.HomePage@489115ef]" name="basePageNavigation" duration-ms="17865" started-at="2020-06-05T22:06:09Z" data-provider="getData" finished-at="2020-06-05T22:06:27Z">
+        <test-method status="PASS" signature="basePageNavigation(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:Academic.E2EProject.LoginPage@489115ef]" name="basePageNavigation" duration-ms="17865" started-at="2020-06-05T22:06:09Z" data-provider="getData" finished-at="2020-06-05T22:06:27Z">
           <params>
             <param index="0">
               <value>
@@ -97,7 +97,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- basePageNavigation -->
-      </class> <!-- Academic.E2EProject.HomePage -->
+      </class> <!-- Academic.E2EProject.LoginPage -->
     </test> <!-- Validating User Login -->
   </suite> <!-- Suite -->
 </testng-results>

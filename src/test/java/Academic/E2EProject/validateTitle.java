@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import pageObject.LandingPage;
 import resources.base;
@@ -19,9 +20,10 @@ public class ValidateTitle extends base {
 	public static Logger log = LogManager.getLogger(ValidateTitle.class);
 	
 	@BeforeTest
-	public void initialize() throws IOException
+	@Parameters("browser")
+	public void initialize(String browser) throws IOException
 	{
-		driver = initializeDriver();
+		driver = initializeDriver(browser);
 		log.info("Driver is initialized");
 		
 		driver.get(prop.getProperty("url"));
@@ -33,7 +35,7 @@ public class ValidateTitle extends base {
 	public void ValidateAppTitle() throws IOException
 	{	 
 		 LandingPage l = new LandingPage(driver);
-		 Assert.assertEquals(l.getTitle().getText(), "FEATURED COURSES1");
+		 Assert.assertEquals(l.getTitle().getText(), "FEATURED COURSES");
 		 
 		 log.info("Successfully validated text message");
 	}

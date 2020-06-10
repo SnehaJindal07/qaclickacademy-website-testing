@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import pageObject.LandingPage;
 import resources.base;
@@ -19,9 +20,10 @@ public class ValidateNavigationBar extends base {
 	public static Logger log = LogManager.getLogger(ValidateNavigationBar.class);
 	
 	@BeforeTest
-	public void initialize() throws IOException
+	@Parameters("browser")
+	public void initialize(String browser) throws IOException
 	{
-		driver = initializeDriver();
+		driver = initializeDriver(browser);
 		driver.get(prop.getProperty("url"));
 	}
 	

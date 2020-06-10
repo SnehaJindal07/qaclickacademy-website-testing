@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]" parallel="none">
   <test name="Default test(failed)" parallel="none">
     <classes>
-      <class name="Academic.E2EProject.HomePage">
+      <class name="Academic.E2EProject.LoginPage">
         <methods>
           <include name="basePageNavigation" invocation-numbers="1"/>
         </methods>
-      </class> <!-- Academic.E2EProject.HomePage -->
+      </class> <!-- Academic.E2EProject.LoginPage -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

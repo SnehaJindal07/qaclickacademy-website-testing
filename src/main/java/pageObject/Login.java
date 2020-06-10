@@ -4,7 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class LoginPage {
+public class Login {
 
 	
 	
@@ -21,7 +21,7 @@ public class LoginPage {
 		ForgotPassword fp = new ForgotPassword(driver);
 		return fp;
 	}
-	public LoginPage(WebDriver driver) {
+	public Login(WebDriver driver) {
 	
 		this.driver=driver;
 	}

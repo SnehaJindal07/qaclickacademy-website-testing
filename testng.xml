@@ -8,13 +8,29 @@
         <listener class-name="Academic.E2EProject.Listeners"/>
     </listeners>
 
-    <test name="Validating Title">
+    <test name="Validating Title in Chrome">
+        <parameter name="browser" value="chrome"/>
         <classes>
             <class name="Academic.E2EProject.ValidateTitle"/>
         </classes>
     </test>
 
-    <test name="Validating Navigation Bar">
+    <test name="Validating Title in Firefox">
+        <parameter name="browser" value="firefox"/>
+        <classes>
+            <class name="Academic.E2EProject.ValidateTitle"/>
+        </classes>
+    </test>
+
+    <test name="Validating Navigation Bar in Chrome">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="Academic.E2EProject.ValidateNavigationBar"/>
+        </classes>
+    </test>
+
+    <test name="Validating Navigation Bar in Firefox">
+        <parameter name="browser" value="firefox"/>
         <classes>
             <class name="Academic.E2EProject.ValidateNavigationBar"/>
         </classes>
@@ -28,11 +44,19 @@
 
     <test name="Validating User Login">
         <classes>
-            <class name="Academic.E2EProject.HomePage"/>
+            <class name="Academic.E2EProject.LoginPage"/>
         </classes>
     </test>
-      
-    <test name="Validating Practice Page">
+
+    <test name="Validating Practice Page in Chrome">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="Academic.E2EProject.PracticePage"/>
+        </classes>
+    </test>
+
+    <test name="Validating Practice Page in Firefox">
+        <parameter name="browser" value="firefox"/>
         <classes>
             <class name="Academic.E2EProject.PracticePage"/>
         </classes>

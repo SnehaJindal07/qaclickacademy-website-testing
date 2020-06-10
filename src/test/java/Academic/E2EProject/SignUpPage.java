@@ -18,10 +18,13 @@ public class SignUpPage extends base {
     public static Logger log = LogManager.getLogger(Academic.E2EProject.SignUpPage.class);
 
     @Test(dataProvider = "getData")
-    public void homePage(String name, String emails, String password,
-                         String confirmPasswords) throws IOException, InterruptedException {
+    public void homePage(String name,
+                         String emails,
+                         String password,
+                         String confirmPasswords,
+                         String browser) throws IOException, InterruptedException {
 
-        driver = initializeDriver();
+        driver = initializeDriver(browser);
         driver.get(prop.getProperty("url"));
 
         LandingPage l = new LandingPage(driver);
@@ -43,11 +46,18 @@ public class SignUpPage extends base {
     public Object[][] getData()
     {
         Random random = new Random();
-        Object[][] data = new Object[1][4];
+        Object[][] data = new Object[2][5];
         data[0][0] = "apple";
         data[0][1] = "test" + System.currentTimeMillis() + "@gmail.com";
         data[0][2] = "1234567";
         data[0][3] = "1234567";
+        data[0][4] = "chrome";
+
+        data[1][0] = "apple";
+        data[1][1] = "test" + System.currentTimeMillis() + "@gmail.com";
+        data[1][2] = "1234567";
+        data[1][3] = "1234567";
+        data[1][4] = "firefox";
 
         return data;
     }

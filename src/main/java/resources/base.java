@@ -22,8 +22,8 @@ public class base {
 	public Properties prop;
 
 	public static Logger log = LogManager.getLogger(base.class);
-	
-	public WebDriver initializeDriver() throws IOException
+
+	public WebDriver initializeDriver(String browser) throws IOException
 	{
 		prop = new Properties();
 
@@ -34,13 +34,13 @@ public class base {
 		String browserName=prop.getProperty("browser");
 		log.info("Running test in " + browserName);
 
-		if(browserName.equals("chrome"))
+		if(browser.equalsIgnoreCase("chrome"))
 		{
 			WebDriverManager.chromedriver().setup();
 //			System.setProperty("webdriver.chrome.driver", projectFolder + "//src//main//java//resources//chromedriver");
 			driver=new ChromeDriver();
 		}
-		else if(browserName.equals("firefox"))
+		else if(browser.equalsIgnoreCase("firefox"))
 		{
 			WebDriverManager.firefoxdriver().setup();
 //			System.setProperty("webdriver.gecko.driver", projectFolder + "//src//main//java//resources//geckodriver");

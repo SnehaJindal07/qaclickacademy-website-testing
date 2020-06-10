@@ -5,9 +5,9 @@ import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.*;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import resources.base;
-
 import java.io.IOException;
 import java.util.Iterator;
 import java.util.List;
@@ -21,9 +21,10 @@ public class PracticePage extends base{
 	public WebDriver driver;
 
 		@BeforeTest
-		public void initialize() throws IOException
+		@Parameters("browser")
+		public void initialize(String browser) throws IOException
 		{
-			driver = initializeDriver();
+			driver = initializeDriver(browser);
 			driver.get(prop.getProperty("table_url"));
 			driver.manage().window().maximize();
 			log.info(System.getProperty("os.name"));
@@ -96,7 +97,8 @@ public class PracticePage extends base{
 			driver.switchTo().alert().accept();
 		
 		//	switch tab example	
-		    driver.findElement(By.id("opentab")).sendKeys(System.getProperty("os.name").contains("Mac") ? Keys.COMMAND : Keys.CONTROL,Keys.ENTER);	
+		    driver.findElement(By.id("opentab")).sendKeys(System.getProperty("os.name").
+					contains("Mac") ? Keys.COMMAND : Keys.CONTROL,Keys.ENTER);
 		
 		//	Get title of the window
 		    Thread.sleep(5000L);
