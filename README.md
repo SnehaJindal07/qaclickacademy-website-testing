@@ -10,6 +10,8 @@ This is basic website testing done using selenium and TestNG.  I have done this 
 - Logging
 - Extent Report Generation
 - Parallel and Sequential Testing
+- Cross Browser Testing
+- Executing test cases using Jenkins
 
 ## Commands
 
